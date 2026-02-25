@@ -1,0 +1,79 @@
+* {
+    font-family: "Comic Sans MS", cursive;
+    box-sizing: border-box;
+}
+
+/*Outside border*/
+body > div {
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+/*Row A*/
+body > div > div.id {
+    background-color: yellow;
+    border-bottom: 2px solid black;
+}
+
+/*Row 2 = C and then B*/
+body > div > div:nth-child(2) {
+    display: block;
+    text-align: right;
+    border-bottom: 2px solid black;
+    direction: rtl;
+}
+
+/*Changing order of B and C*/
+body > div > div:nth-child(2) span {
+    direction: rtl;
+    unicode-bidi: embed;
+}
+
+/*Row D*/
+span.class {
+    font-style: italic;
+    display: block;
+}
+
+/*Row F G E*/
+body > div > div.class {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto auto;
+}
+
+/*Row F*/
+body > div > div.class > div.id {
+    background-color: yellow;
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+/*Row G*/
+body > div > div.class > div#class {
+    grid-column: 2;
+    grid-row: 1;
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+
+}
+
+/*Row E*/
+body > div > div.class > span {
+    grid-column: 3;
+    grid-row: 1;
+    align-self: start;
+}
+
+/*Row H*/
+body > div > div.class > div#H {
+    grid-column: 1 / 4;
+    grid-row: 2;
+    width: 33.333vw;
+    margin: 0 auto;
+    border: 2px solid black;
+    text-align: right;
+}
